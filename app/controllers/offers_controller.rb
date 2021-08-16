@@ -15,4 +15,10 @@ class OffersController < ApplicationController
       render 'new'
     end
   end
+
+  private
+
+  def offer_params
+    params.require(:offer).permit(:description, :title, :price_per_day)
+  end
 end
