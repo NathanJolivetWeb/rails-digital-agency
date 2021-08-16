@@ -1,2 +1,8 @@
-<h1>Offers#new</h1>
-<p>Find me in app/views/offers/new.html.erb</p>
+<div class="container">
+  <%= simple_form_for @offer do |f|%>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :price_per_day %>
+  <%= f.submit %>
+  <% end %>
+</div>
