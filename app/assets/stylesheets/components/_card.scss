@@ -8,6 +8,7 @@
 .card-index {
   text-align: center;
   background-color: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0/ 20%);
 }
 
 .card-index-top {
@@ -15,10 +16,12 @@
   justify-content: space-between;
   margin: 4px;
   padding: 4px 8px;
+  height: 80px;
 }
 
 .card-index-text {
   text-align: center;
+  margin: 4px;
 }
 
 .card-index-bottom {
@@ -26,9 +29,12 @@
   justify-content: space-between;
   margin: 4px;
   padding: 4px 8px;
+  height: 60px;
+  border-top: 1px solid black;
 }
 
 .card-booking {
   text-align: center;
   background-color: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0 / 20%);
 }
