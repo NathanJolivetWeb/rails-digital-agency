@@ -1,4 +1,4 @@
-.showContainer{
+.show-container{
   width: 100%;
   background-color: #DDD;
   padding: 16px;
@@ -6,12 +6,12 @@
   margin-top: 50px;
 }
 
-.showContainer > h2{
+.show-container > h2, h3{
   text-align: center;
   margin: 20px 0;
 }
 
-.showDateform{
+.show-dateform{
   display: flex;
   flex-direction: column;
   background-color: #fff;
@@ -20,11 +20,11 @@
   border-radius: 8px;
 }
 
-.showDateform > h3{
+.show-dateform > h3{
   text-align: center;
 }
 
-.formContainer{
+.form-container{
   display: flex;
   justify-content: space-between;
 }
