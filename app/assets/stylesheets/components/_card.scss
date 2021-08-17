@@ -9,6 +9,17 @@
   text-align: center;
   background-color: white;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0/ 20%);
+  color: black;
+  text-decoration: none;
+  &:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+    cursor: grab;
+  }
+}
+
+a {
+  text-decoration: none !important;
 }
 
 .card-index-top {
@@ -16,12 +27,29 @@
   justify-content: space-between;
   margin: 4px;
   padding: 4px 8px;
-  height: 80px;
+  h3 {
+    font-size: 20px;
+  }
+  img {
+    object-fit: cover;
+  }
+}
+
+.card-index-top-text {
+  display: flex;
+  text-align: right;
 }
 
 .card-index-text {
   text-align: center;
   margin: 4px;
+  h3 {
+    font-size: 20px;
+    margin-bottom: 0px;
+  }
+  p {
+    margin-top: 0px;
+  }
 }
 
 .card-index-bottom {
@@ -31,6 +59,10 @@
   padding: 4px 8px;
   height: 60px;
   border-top: 1px solid black;
+  p {
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+  }
 }
 
 .card-booking {
