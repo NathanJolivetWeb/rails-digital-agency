@@ -1,14 +1,13 @@
 .navbar{
   display: flex;
   justify-content: space-between;
-  border-bottom: 3px solid black;
+  border-bottom: 1px solid lightgray;
   background-color: #ffffff;
 }
 
 .link{
   margin-right: 40px;
   display: flex;
-
 }
 
 .btn-navbar2{
@@ -25,29 +24,22 @@
 }
 
 .btn-navbar{
-  background-color: #c4bfbf;
+  background-color: lightgray;
   padding: 6px 16px;
   border-radius: 4px;
-  color: black;
+  color: white;
   margin-right: 15px;
 }
 
 .btn-navbar:hover{
   text-decoration: none;
   opacity: 0.8;
-  color: black;
+  color: white;
 }
 
 .logonavbar{
   width: 140px;
   height: 80px;
-}
-
-.avatar{
-  width: 40px;
-  height: 40px;
-  border: 1px solid #c4bfbf;
-  cursor: grab;
 }
 
 .list-contain{
@@ -78,5 +70,5 @@ list-style: none;
 .dropdownitem:hover{
   text-decoration: none;
   color: #ff9c00;
-  background-color: #c4bfbf;
+  background-color: white;
 }
