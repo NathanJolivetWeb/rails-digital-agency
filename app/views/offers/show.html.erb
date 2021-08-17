@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="show-container">
+    <h2><%= @offer.title %></h2>
+    <h3><%= @offer.user.first_name + " " + @offer.user.last_name %></h3>
+    <div class="form-container">
+    <p><%= @offer.description %></p>
+      <div class="show-dateform">
+          <h3>Formulaire</h3>
+          <%= simple_form_for [ @offer, @booking ] do |f|%>
+          <%= f.input :begin_date %>
+          <%= f.input :end_date %>
+          <%= f.submit class: "btn btn-success" %>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</div>
