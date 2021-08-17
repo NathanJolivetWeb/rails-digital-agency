@@ -1,11 +1,13 @@
 .navbar{
   display: flex;
   justify-content: space-between;
-  border: 3px solid black;
+  border-bottom: 3px solid black;
+  background-color: #ffffff;
 }
 
 .link{
   margin-right: 30px;
+  display: flex;
 
 }
 
@@ -14,6 +16,7 @@
   padding: 6px 16px;
   border-radius: 4px;
   color: white;
+  margin-right: 15px;
 }
 .btn-navbar2:hover{
   text-decoration: none;
@@ -21,19 +24,30 @@
   color: white;
 }
 
-.logonavbar{
-  width: 140px;
-  height: 80px;
-}
 .btn-navbar{
-  background-color: #b1abab;
+  background-color: #c4bfbf;
   padding: 6px 16px;
   border-radius: 4px;
   color: black;
   margin-right: 15px;
 }
+
 .btn-navbar:hover{
   text-decoration: none;
   opacity: 0.8;
   color: black;
+}
+
+.logonavbar{
+  width: 140px;
+  height: 80px;
+}
+
+.avatar{
+  width: 40px;
+  height: 40px;
+}
+
+.list-contain{
+list-style: none;
 }
