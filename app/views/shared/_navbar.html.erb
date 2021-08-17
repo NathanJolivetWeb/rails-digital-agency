@@ -4,15 +4,18 @@
     <% end %>
 
     <div class="link">
-    <%= link_to "Sign in", new_user_session_path, class: "btn-navbar" %>
-    <%= link_to "Sign up", new_user_registration_path, class: "btn-navbar2" %>
-
-     <div class="list-contain">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar" %>
-          <div class="dropdownmenu d-none">
-            <%= link_to "Personal space", "#", class: "dropdownitem" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdownitem" %>
-          </div>
+      <% if user_signed_in? %>
+      <div class="list-contain">
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar" %>
+        <div class="dropdownmenu d-none">
+          <%= link_to "Personal space", "#", class: "dropdownitem" %>
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdownitem" %>
+        </div>
       </div>
+      <% else %>
+      <%= link_to "Sign in", new_user_session_path, class: "btn-navbar" %>
+      <%= link_to "Sign up", new_user_registration_path, class: "btn-navbar2" %>
+      <% end %>
+
     </div>
 </div>
