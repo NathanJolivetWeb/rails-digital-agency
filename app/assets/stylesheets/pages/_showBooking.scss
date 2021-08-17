@@ -1,0 +1,30 @@
+.showContainer{
+  width: 100%;
+  background-color: #DDD;
+  padding: 16px;
+  border-radius: 8px;
+  margin-top: 50px;
+}
+
+.showContainer > h2{
+  text-align: center;
+  margin: 20px 0;
+}
+
+.showDateform{
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  width: 50%;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.showDateform > h3{
+  text-align: center;
+}
+
+.formContainer{
+  display: flex;
+  justify-content: space-between;
+}
