@@ -1,0 +1,23 @@
+.card-index {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.card-index-top {
+  display: flex;
+  justify-content: space-between;
+  margin: 4px;
+  padding: 4px 8px;
+}
+
+.card-index-text {
+  text-align: center;
+}
+
+.card-index-bottom {
+  display: flex;
+  justify-content: space-between;
+  margin: 4px;
+  padding: 4px 8px;
+}
