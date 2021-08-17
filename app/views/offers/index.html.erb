@@ -1,18 +1,18 @@
-<div class="container">
+<div class="card-grid">
   <% @offers.each do |offer| %>
-  <div class="card-index">
-    <div class="card-index-top">
-      <img src="" alt="Avatar perso" class="avatar">
-      <h2> <%= offer.user.last_name.capitalize + ' ' +  offer.user.first_name.capitalize %> </h2>
+    <div class="card-index">
+      <div class="card-index-top">
+        <img src="https://kitt.lewagon.com/placeholder/users/cveneziani" alt="Avatar perso" class="avatar">
+        <h2> <%= offer.user.last_name.capitalize + ' ' +  offer.user.first_name.capitalize %> </h2>
+      </div>
+      <div class="card-index-text">
+        <h3><%= offer.title %></h3>
+        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis fugit fugiat ex quia corporis, suscipit numquam! Asperiores earum temporibus placeat, beatae quo rerum nemo, obcaecati perferendis blanditiis minus nisi exercitationem. </p>
+      </div>
+      <div class="card-index-bottom">
+        <p>Full Time</p>
+        <p>Update-time</p>
+      </div>
     </div>
-    <div class="card-index-text">
-      <h3><%= offer.title %></h3>
-      <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis fugit fugiat ex quia corporis, suscipit numquam! Asperiores earum temporibus placeat, beatae quo rerum nemo, obcaecati perferendis blanditiis minus nisi exercitationem. </p>
-    </div>
-    <div class="card-index-bottom">
-      <p>Full Time</p>
-      <p>Update-time</p>
-    </div>
-  </div>
   <% end %>
 </div>
