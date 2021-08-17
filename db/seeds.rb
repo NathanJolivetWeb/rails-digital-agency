@@ -7,12 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # Cleaning all DB model
-puts "Cleaning user database..."
-User.destroy_all
-puts "Cleaning offer database..."
-Offer.destroy_all
 puts "Cleaning booking database..."
 Booking.destroy_all
+puts "Cleaning offer database..."
+Offer.destroy_all
+puts "Cleaning user database..."
+User.destroy_all
 puts "=============================="
 
 # Create users
@@ -48,4 +48,20 @@ end
 puts "Congrats, 4 offers with random user was created!"
 puts "=============================="
 
+#Create bookings
 
+puts "Creating 6 bookings ..."
+booking1 = { begin_date: 20210822, end_date: 20211206, user: User.all[rand(0..3)], offer: Offer.all[rand(0..5)] }
+booking2 = { begin_date: 20210827, end_date: 20211105, user: User.all[rand(0..3)], offer: Offer.all[rand(0..5)] }
+booking3 = { begin_date: 20210828, end_date: 20211203, user: User.all[rand(0..3)], offer: Offer.all[rand(0..5)] }
+booking4 = { begin_date: 20210826, end_date: 20211128, user: User.all[rand(0..3)], offer: Offer.all[rand(0..5)] }
+booking5 = { begin_date: 20210825, end_date: 20211125, user: User.all[rand(0..3)], offer: Offer.all[rand(0..5)] }
+booking6 = { begin_date: 20210821, end_date: 20211105, user: User.all[rand(0..3)], offer: Offer.all[rand(0..5)] }
+
+[booking1, booking2, booking3, booking4, booking5, booking6].each do |attributes|
+  booking = Booking.create!(attributes)
+  puts "Created #{booking.id} assigned to #{booking.user.first_name} and #{booking.offer.title}"
+end
+
+puts "Congrates, 6 bookings with random user and offer were created!"
+puts "=============================="

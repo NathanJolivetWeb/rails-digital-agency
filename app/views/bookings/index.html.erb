@@ -22,19 +22,21 @@
 
   <h2>Offer Create</h2>
 
-  <div class="card-booking">
+  <div class="card-grid">
     <% @bookings.each do |booking| %>
-      <div class="card-index-top">
-        <img src="" alt="Avatar perso" class="avatar">
-        <h2> <%= booking.offer.user.last_name.capitalize + ' ' +  booking.offer.user.first_name.capitalize %> </h2>
-      </div>
-      <div class="card-index-text">
-        <h3><%= booking.offer.title %></h3>
-        <p><%= booking.offer.description %></p>
-      </div>
-      <div class="card-index-bottom">
-        <p>Full Time</p>
-        <p>Update-time</p>
+      <div class="card-booking">
+        <div class="card-index-top">
+          <img src="" alt="Avatar perso" class="avatar">
+          <h2> <%= booking.offer.user.last_name.capitalize + ' ' +  booking.offer.user.first_name.capitalize %> </h2>
+        </div>
+        <div class="card-index-text">
+          <h3><%= booking.offer.title %></h3>
+          <p><%= booking.offer.description %></p>
+        </div>
+        <div class="card-index-bottom">
+          <p>Full Time</p>
+          <p>Update-time</p>
+        </div>
       </div>
     <% end %>
   </div>
