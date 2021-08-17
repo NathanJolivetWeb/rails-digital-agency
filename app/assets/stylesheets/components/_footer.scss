@@ -1,0 +1,22 @@
+.footer{
+  border-top: 1px solid lightgray;
+}
+
+.icon{
+  font-size: 35px;
+  color: #ff9c00;
+  margin: 0 10px;
+}
+.icon:hover{
+  color: #cc8005;
+  transition: 0.5s;
+}
+
+.icons{
+  display: flex;
+  justify-content: center;
+}
+
+.fixed-footer{
+  min-height: calc(100vh - 109px - 53px);
+}
