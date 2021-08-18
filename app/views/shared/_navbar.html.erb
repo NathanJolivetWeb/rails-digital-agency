@@ -2,7 +2,7 @@
   <%= link_to root_path, class: "navbar-brand" do %>
     <%= image_tag "digital-logo.png", class: "logonavbar" %>
     <% end %>
-
+    <%= render 'shared/searchbar' %>
     <div class="link">
       <% if user_signed_in? %>
       <div class="list-contain">
