@@ -3,6 +3,7 @@
 
   <div class="card-grid">
     <% @bookings.each do |booking| %>
+      <%= link_to offer_path(booking.offer)  do %>
         <div class="card-booking">
           <div class="card-index-top">
             <%= cl_image_tag booking.offer.user.photo.key, crop: :fill, class: 'avatar-card'%>
@@ -17,6 +18,7 @@
             <p>Update-time</p>
           </div>
         </div>
+      <% end %>
     <% end %>
   </div>
 
@@ -24,21 +26,22 @@
 
   <div class="card-grid">
     <% @my_offers_bookings.each do |booking| %>
-      <div class="card-booking">
-        <div class="card-index-top">
-          <%= cl_image_tag booking.offer.user.photo.key, crop: :fill, class: 'avatar-card'%>
-          <h2><%= booking.user.first_name.capitalize %> </h2>
+      <%= link_to offer_path(booking.offer)  do %>
+        <div class="card-booking">
+          <div class="card-index-top">
+            <%= cl_image_tag booking.offer.user.photo.key, crop: :fill, class: 'avatar-card'%>
+            <h2><%= booking.user.first_name.capitalize %> </h2>
+          </div>
+          <div class="card-index-text">
+            <h3><%= booking.offer.title %></h3>
+            <p><%= booking.offer.description %></p>
+          </div>
+          <div class="card-index-bottom">
+            <p>Full Time</p>
+            <p>Update-time</p>
+          </div>
         </div>
-        <div class="card-index-text">
-          <h3><%= booking.offer.title %></h3>
-          <p><%= booking.offer.description %></p>
-        </div>
-        <div class="card-index-bottom">
-          <p>Full Time</p>
-          <p>Update-time</p>
-        </div>
-      </div>
+      <% end %>
     <% end %>
   </div>
-
 </div>
