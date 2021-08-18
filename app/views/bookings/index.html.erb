@@ -5,8 +5,8 @@
     <% @bookings.each do |booking| %>
         <div class="card-booking">
           <div class="card-index-top">
-            <img src="" alt="Avatar perso" class="avatar">
-            <h2> <%= booking.offer.user.last_name.capitalize + ' ' +  booking.offer.user.first_name.capitalize %> </h2>
+            <%= cl_image_tag booking.offer.user.photo.key, crop: :fill, class: 'avatar-card'%>
+            <h2> <%= booking.offer.user.first_name.capitalize %> </h2>
           </div>
           <div class="card-index-text">
             <h3><%= booking.offer.title %></h3>
@@ -26,8 +26,8 @@
     <% @my_offers_bookings.each do |booking| %>
       <div class="card-booking">
         <div class="card-index-top">
-          <img src="" alt="Avatar perso" class="avatar">
-          <h2><%= booking.user.last_name.capitalize + ' ' +  booking.user.first_name.capitalize %> </h2>
+          <%= cl_image_tag booking.offer.user.photo.key, crop: :fill, class: 'avatar-card'%>
+          <h2><%= booking.user.first_name.capitalize %> </h2>
         </div>
         <div class="card-index-text">
           <h3><%= booking.offer.title %></h3>
