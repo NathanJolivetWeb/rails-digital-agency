@@ -8,7 +8,7 @@
       <div class="list-contain">
         <%= cl_image_tag current_user.photo.key, crop: :fill, class: 'avatar'%>
         <div class="dropdownmenu d-none">
-          <%= link_to "Personal space", "#", class: "dropdownitem" %>
+          <%= link_to "Personal space", bookings_path, class: "dropdownitem" %>
           <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdownitem" %>
         </div>
       </div>
