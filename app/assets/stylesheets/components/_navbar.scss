@@ -65,3 +65,31 @@ list-style: none;
   color: #ff9c00;
   background-color: white;
 }
+
+
+/* -------------- */
+/* CSS search bar */
+.searchbar{
+  border-radius: 20px 0 0 20px;
+  width: 400px;
+  position: relative;
+  border-right: none;
+  background-color: RGB(255, 255, 255);
+  border-color: black;
+  height: 40px;
+}
+
+.searchbar:focus{
+  outline: none;
+}
+
+
+.btn-searchbar{
+  border-radius: 0 20px 20px 0;
+  position: absolute;
+  border-left: none;
+  font-size: 23px;
+  background-color: RGB(255, 255, 255);
+  color: #ff9c00;
+  border-color: black;
+}
