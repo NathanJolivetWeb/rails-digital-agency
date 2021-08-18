@@ -33,12 +33,12 @@ puts "=============================="
 
 # Create offers
 puts "Creating 4 offers..."
-offer1 = { description: "Offer1 description seed", title: "Dev fullstack", price_per_day: 200, user: User.all[rand(0..3)] }
-offer2 = { description: "Offer2 description seed", title: "Dev front", price_per_day: 300, user: User.all[rand(0..3)] }
-offer3 = { description: "Offer3 description seed", title: "Dev back", price_per_day: 150, user: User.all[rand(0..3)] }
-offer4 = { description: "Offer4 description seed", title: "UI/UX", price_per_day: 500, user: User.all[rand(0..3)] }
-offer5 = { description: "Offer5 description seed", title: "Dev fullstack", price_per_day: 160, user: User.all[rand(0..3)] }
-offer6 = { description: "Offer6 description seed", title: "Product designer", price_per_day: 350, user: User.all[rand(0..3)] }
+offer1 = { description: "Offer1 description seed", category: "front-end", title: "Dev front-end", price_per_day: 200, user: User.all[rand(0..3)] }
+offer2 = { description: "Offer2 description seed", category: "front-end", title: "Dev front-end", price_per_day: 300, user: User.all[rand(0..3)] }
+offer3 = { description: "Offer3 description seed", category: "back-end", title: "Dev back-end", price_per_day: 150, user: User.all[rand(0..3)] }
+offer4 = { description: "Offer4 description seed", category: "back-end", title: "Dev back-end", price_per_day: 500, user: User.all[rand(0..3)] }
+offer5 = { description: "Offer5 description seed", category: "ux-ui", title: "Dev UX/UI", price_per_day: 160, user: User.all[rand(0..3)] }
+offer6 = { description: "Offer6 description seed", category: "ux-ui", title: "Dev UX/UI", price_per_day: 350, user: User.all[rand(0..3)] }
 
 [ offer1, offer2, offer3, offer4, offer5, offer6 ].each do |attributes|
   offer = Offer.create!(attributes)
