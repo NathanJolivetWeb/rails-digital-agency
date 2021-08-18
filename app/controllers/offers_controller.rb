@@ -1,6 +1,5 @@
 class OffersController < ApplicationController
-  
-  
+
   def show
     @offer = Offer.find(params[:id])
     @booking = Booking.new
@@ -8,6 +7,9 @@ class OffersController < ApplicationController
 
   def index
     @offers = Offer.all
+    if params[:category].present?
+      @offers = Offer.where("category like ?","%#{params[:category]}%")
+    end
   end
 
   def new
