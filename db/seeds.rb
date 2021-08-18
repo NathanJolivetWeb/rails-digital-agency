@@ -17,15 +17,26 @@ puts "=============================="
 
 # Create users
 puts "Creating 4 users..."
-nathan = { email: "nathan@lewagon.fr", password: "111111", first_name: "Nathan", last_name: "Nom1" }
-luc = { email: "luc@lewagon.fr", password: "222222", first_name: "Luc", last_name: "Nom2" }
-christophe = { email: "christophe@lewagon.fr", password: "333333", first_name: "Christophe", last_name: "Nom3" }
-dany = { email: "dany@lewagon.fr", password: "444444", first_name: "Dany", last_name: "Nom4" }
 
-[ nathan, luc, christophe, dany ].each do |attributes|
-  user = User.create!(attributes)
-  puts "Created #{user.first_name}"
-end
+file = URI.open('https://avatars.githubusercontent.com/u/85315784?v=4')
+nathan = User.new(email: "nathan@lewagon.fr", password: "111111", first_name: "Nathan", last_name: "Nom1")
+nathan.photo.attach(io: file, filename: 'avatar', content_type: 'image')
+nathan.save
+
+file = URI.open('https://avatars.githubusercontent.com/u/45171753?v=4')
+luc = User.new(email: "luc@lewagon.fr", password: "222222", first_name: "Luc", last_name: "Nom2")
+luc.photo.attach(io: file, filename: 'avatar', content_type: 'image')
+luc.save
+
+file = URI.open('https://avatars.githubusercontent.com/u/85166333?v=4')
+christophe = User.new(email: "christophe@lewagon.fr", password: "333333", first_name: "Christophe", last_name: "Nom3")
+christophe.photo.attach(io: file, filename: 'avatar', content_type: 'image')
+christophe.save
+
+file = URI.open('https://avatars.githubusercontent.com/u/80858493?v=4')
+dany = User.new(email: "dany@lewagon.fr", password: "444444", first_name: "Dany", last_name: "Nom4")
+dany.photo.attach(io: file, filename: 'avatar', content_type: 'image')
+dany.save
 
 puts "Congrats, 4 users was created!"
 puts "=============================="

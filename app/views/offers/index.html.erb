@@ -4,7 +4,7 @@
       <%= link_to offer_path(offer) do %>
         <div class="card-index">
           <div class="card-index-top">
-            <img src="https://kitt.lewagon.com/placeholder/users/cveneziani" alt="Avatar perso" class="avatar-card">
+            <%= cl_image_tag offer.user.photo.key, crop: :fill, class: 'avatar-card'%>
             <div class="card-index-top-text">
               <h3> <%= offer.user.last_name.capitalize + ' ' +  offer.user.first_name.capitalize %> </h3>
             </div>
