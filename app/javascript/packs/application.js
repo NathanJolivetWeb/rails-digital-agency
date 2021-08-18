@@ -27,8 +27,8 @@ import "bootstrap";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-import { initDropdownNavbar } from '../components/init_dropdown_navbar'
 import { initFlatpickr } from "../plugins/flatpickr";
+import { initDropdownNavbar } from '../components/init_dropdown_navbar'
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
