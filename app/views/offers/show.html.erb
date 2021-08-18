@@ -5,17 +5,23 @@
     <div class="form-container">
     <p><%= @offer.description %></p>
       <div class="show-dateform">
-          <h3>Formulaire</h3>
-          <%= simple_form_for [ @offer, @booking ] do |f|%>
-          <%= f.input :begin_date %>
-          <%= f.input :end_date %>
-          <%= f.submit class: "btn btn-success" %>
-          <% end %>
+        <h3>Formulaire</h3>
+        <%= simple_form_for [ @offer, @booking ] do |f|%>
+        <%= f.input :begin_date %>
+        <%= f.input :end_date %>
+        <%= f.submit class: "btn btn-success" %>
+        <% end %>
       </div>
     </div>
   </div>
 
   <%= link_to offers_path, class: "btn btn-primary mt-2" do %>
   <i class="fas fa-undo-alt"> Back to offers</i>
+  <% end %>
+
+  <% if (@offer.user == current_user) %>
+    <%= link_to edit_offer_path(@offer.id), class: "btn btn-primary mt-2" do %>
+    <i class="fas fa-pencil-alt"> Edit your offer</i>
+    <% end %>
   <% end %>
 </div>
