@@ -1,7 +1,10 @@
 
 
-
-<%= form_tag(offers_path, method: 'get') do %>
-      <%= text_field_tag(:category, params[:category]) %>
-      <%= submit_tag("Search", name: nil) %>
-<% end %>
+<div class="searchbar-contain">
+  <%= form_tag(offers_path, method: 'get') do %>
+        <%= text_field_tag :category, params[:category], class: "searchbar", placeholder: "search category" %>
+        <%= button_tag(type: "submit", class: "btn-searchbar") do  %>
+          <i class="fas fa-search"></i>
+        <% end %>
+  <% end %>
+</div>
