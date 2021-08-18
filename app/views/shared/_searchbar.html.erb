@@ -1,0 +1,7 @@
+
+
+
+<%= form_tag(offers_path, method: 'get') do %>
+      <%= text_field_tag(:category, params[:category]) %>
+      <%= submit_tag("Search", name: nil) %>
+<% end %>
