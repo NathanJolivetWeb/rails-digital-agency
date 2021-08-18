@@ -7,8 +7,8 @@
       <div class="show-dateform">
           <h3>Formulaire</h3>
           <%= simple_form_for [ @offer, @booking ] do |f|%>
-          <%= f.input :begin_date %>
-          <%= f.input :end_date %>
+          <%= f.input :begin_date, input_html: {class: "datepicker"} %>
+          <%= f.input :end_date, input_html: {class: "datepicker"} %>
           <%= f.submit class: "btn btn-success" %>
           <% end %>
       </div>
