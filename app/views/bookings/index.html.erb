@@ -6,7 +6,7 @@
         <div class="card-booking">
           <div class="card-index-top">
             <img src="" alt="Avatar perso" class="avatar">
-            <h2> <%= booking.user.last_name.capitalize + ' ' +  booking.user.first_name.capitalize %> </h2>
+            <h2> <%= booking.offer.user.last_name.capitalize + ' ' +  booking.offer.user.first_name.capitalize %> </h2>
           </div>
           <div class="card-index-text">
             <h3><%= booking.offer.title %></h3>
@@ -23,11 +23,11 @@
   <h2>Offer Create</h2>
 
   <div class="card-grid">
-    <% @bookings.each do |booking| %>
+    <% @my_offers_bookings.each do |booking| %>
       <div class="card-booking">
         <div class="card-index-top">
           <img src="" alt="Avatar perso" class="avatar">
-          <h2> <%= booking.offer.user.last_name.capitalize + ' ' +  booking.offer.user.first_name.capitalize %> </h2>
+          <h2><%= booking.user.last_name.capitalize + ' ' +  booking.user.first_name.capitalize %> </h2>
         </div>
         <div class="card-index-text">
           <h3><%= booking.offer.title %></h3>

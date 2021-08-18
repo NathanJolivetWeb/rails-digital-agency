@@ -2,17 +2,30 @@
 <%= render "shared/banner" %>
 
   <div class="grid-homepage">
+
+    <%= link_to offers_path do %>
     <div class="card-homepage" style=" background-color: #FF9D02">
-      ALL
+    <p>ALL</p>
     </div>
-    <div class="card-homepage" style="background-color: #F78238">
-      FRONT-END
+    <%end%>
+
+    <%= link_to offers_path(category: 'front-end') do %>
+    <div class="card-homepage" style=" background-color: #F78238">
+    <p>FRONT-END</p>
     </div>
-    <div class="card-homepage" style="background-color: #F37448">
-      BACK-END
+    <%end%>
+
+    <%= link_to offers_path(category: 'back-end') do %>
+    <div class="card-homepage" style=" background-color: #F37448">
+    <p>BACK-END</p>
     </div>
-    <div class="card-homepage" style="background-color: #EE6556">
-      UX/UI
+    <%end%>
+
+    <%= link_to offers_path(category: 'ux-ui') do %>
+    <div class="card-homepage" style=" background-color: #EE6556">
+    <p>UI/UX</p>
     </div>
+    <%end%>
+
   </div>
 </div>

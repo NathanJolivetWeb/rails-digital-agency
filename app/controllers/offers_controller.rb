@@ -8,6 +8,9 @@ class OffersController < ApplicationController
 
   def index
     @offers = Offer.all
+    if params[:category].present?
+      @offers = Offer.where("category ilike ?","%#{params[:category]}%")
+    end
   end
 
   def new
