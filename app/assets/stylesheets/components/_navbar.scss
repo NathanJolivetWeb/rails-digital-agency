@@ -53,8 +53,10 @@ list-style: none;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
-  right: 10px;
+  right: 6px;
 }
+
+
 .dropdownitem{
   display: block;
   color: black;
@@ -62,8 +64,9 @@ list-style: none;
 }
 .dropdownitem:hover{
   text-decoration: none;
-  color: #ff9c00;
+  color: #8db095;
   background-color: white;
+  transform: scale(1.01);
 }
 
 /* -------------- */
