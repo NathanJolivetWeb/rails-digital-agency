@@ -1,3 +1,44 @@
+.card-trip {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 300px;
+}
+
+.card-trip-img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-trip h2, h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-trip p {
+  font-size: 18px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.card-trip-infos{
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.infos-price{
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+  padding: 0 8px;
+}
+
+
+
+/* cards index offers */
 .card-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
