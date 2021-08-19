@@ -1,63 +1,67 @@
 <div class="container">
   <h1>Offer applied</h1>
-
   <div class="card-grid">
     <% @bookings.each do |booking| %>
+      <div class="card-trip">
+        <%= link_to offer_path(booking.offer) do %>
+          <%= cl_image_tag booking.offer.user.photo.key, crop: :fill, class: 'card-trip-img' %>
+            <div class="card-trip-infos">
+              <h2><%= booking.offer.user.last_name.capitalize + ' ' +  booking.offer.user.first_name.capitalize %></h2>
+              <h3><%= booking.offer.title %></h3>
+            </div>
+            <div class="infos-price">
+              <h2 class="card-trip-pricing"><%= booking.begin_date %></h2>
+              <h2><%= booking.end_date %></h2>
+            </div>
+    <% end %>
+            <div class='text-center mb-2'>
+              <% if booking.status == "pending" %>
+                <%=link_to booking_path(booking, status: "accepted"), method: :patch, class:'text-success mr-5' do %>
+                  <i class="fas fa-check"></i>
+                <% end %>
+                <%=link_to booking_path(booking, status: "declined"), method: :patch, class:'text-danger' do %>
+                  <i class="fas fa-times"></i>
+                <% end %>
+              <% end %>
+              <% if booking.status == "accepted" %>
+                <p class="text-success">Accepted</p>
+              <% elsif booking.status == "declined" %>
+                <p class="text-danger">Declined</p>
+              <% end %>
+            </div>
+      </div>
+    <% end %>
+  </div>
+
+  <h1>Offer Create</h1>
+  <div class="card-grid">
+    <% @my_offers_bookings.each do |booking| %>
       <%= link_to offer_path(booking.offer) do %>
-
         <div class="card-trip">
-            <%= cl_image_tag booking.offer.user.photo.key, crop: :fill, class: 'card-trip-img' %>
-            <div>
-              <div class="card-trip-infos">
-                <h2><%= booking.offer.user.last_name.capitalize + ' ' +  booking.offer.user.first_name.capitalize %></h2>
-                <h3><%= booking.offer.title %></h3>
-              </div>
-
-              <div class="infos-price">
-                <h2 class="card-trip-pricing"><%= booking.begin_date %></h2>
-                <h2><%= booking.end_date %></h2>
-              </div>
+          <%= cl_image_tag booking.offer.user.photo.key, crop: :fill, class: 'card-trip-img' %>
+          <div>
+            <div class="card-trip-infos">
+              <h2><%= booking.offer.user.last_name.capitalize + ' ' +  booking.offer.user.first_name.capitalize %></h2>
+              <h3><%= booking.offer.title %></h3>
+            </div>
+            <div class="infos-price">
+              <h2><%= booking.offer.price_per_day %>$/day</h2>
+              <h2><i class="fas fa-clock"></i>
+              <%=
+              secondsInDay = 24 * 60 * 60
+              comparatedDate = (Time.now - booking.offer.created_at.localtime).to_i
+              days = comparatedDate / secondsInDay
+              if (comparatedDate < 86400)
+              "#{comparatedDate / ( 60 * 60 )} hours ago"
+              else
+              "#{days} days ago"
+              end
+              %>
+              </h2>
             </div>
           </div>
-        <% end %>
-        <% end %>
-
-    </div>
-
-    <h1>Offer Create</h1>
-
-   <div class="card-grid">
-
-
-      <% @my_offers_bookings.each do |booking| %>
-        <%= link_to offer_path(booking.offer) do %>
-          <div class="card-trip">
-
-              <%= cl_image_tag booking.offer.user.photo.key, crop: :fill, class: 'card-trip-img' %>
-              <div>
-                <div class="card-trip-infos">
-                  <h2><%= booking.offer.user.last_name.capitalize + ' ' +  booking.offer.user.first_name.capitalize %></h2>
-                  <h3><%= booking.offer.title %></h3>
-                </div>
-
-                  <div class="infos-price">
-                    <h2><%= booking.offer.price_per_day %>$/day</h2>
-                    <h2><i class="fas fa-clock"></i>
-                    <%=
-                secondsInDay = 24 * 60 * 60
-                comparatedDate = (Time.now - booking.offer.created_at.localtime).to_i
-                days = comparatedDate / secondsInDay
-
-                if (comparatedDate < 86400)
-                  "#{comparatedDate / ( 60 * 60 )} hours ago"
-                else
-                  "#{days} days ago"
-                end
-                    %>
-                    </h2>
-                </div>
-              </div>
         </div>
       <% end %>
    <% end %>
+  </div>
 </div>

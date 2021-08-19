@@ -7,40 +7,32 @@
     transform: scale(1.05);
     transition: 0.3s;
   }
-
 }
-
 .card-trip-img {
   height: 200px;
   width: 100%;
   object-fit: cover;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
-
 .card-trip h2, h3 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
 }
-
 .card-trip p {
   font-size: 18px;
   opacity: .7;
   margin: 0;
 }
-
-
 .card-trip-infos{
   text-align: center;
   padding-bottom: 20px;
   border-bottom: 1px solid lightgrey;
 }
-
 .card-trip-infos h2{
   padding-top: 10px;
   color: #2f3e46;
 }
-
 .card-trip-infos h3{
   color: grey;
 }
@@ -55,26 +47,22 @@
   font-size: 13px;
   color: #84a98c;
 }
-
 .create-card-btn{
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 40px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-   &:hover{
+  &:hover{
     transform: scale(1.05);
     transition: 0.3s;
   }
 }
-
 .container h1{
   color: #2f3e46;
   font-family: "Nunito", "Helvetica", "sans-serif";
   font-weight: bold;
 }
-
-
 
 /* cards index offers */
 .card-grid {
@@ -84,7 +72,6 @@
   width: 100%;
   margin-bottom: 24px;
 }
-
 .card-index {
   text-align: center;
   background-color: white;
@@ -97,11 +84,9 @@
     cursor: grab;
   }
 }
-
 a {
   text-decoration: none !important;
 }
-
 .card-index-top {
   display: flex;
   justify-content: space-between;
@@ -114,12 +99,10 @@ a {
     object-fit: cover;
   }
 }
-
 .card-index-top-text {
   display: flex;
   text-align: right;
 }
-
 .card-index-text {
   text-align: center;
   margin: 4px;
@@ -131,7 +114,6 @@ a {
     margin-top: 0px;
   }
 }
-
 .card-index-bottom {
   display: flex;
   justify-content: space-between;
@@ -144,7 +126,6 @@ a {
     margin-bottom: 0px;
   }
 }
-
 .card-booking {
   text-align: center;
   background-color: white;
@@ -157,7 +138,6 @@ a {
     cursor: grab;
   }
 }
-
 .card-homepage {
   margin: 0 10px;
   background-size: cover;
@@ -175,7 +155,6 @@ a {
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
-
 .grid-homepage {
   margin: 50px;
   display: grid;

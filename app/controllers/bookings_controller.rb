@@ -28,8 +28,9 @@ class BookingsController < ApplicationController
   end
 
   def update
-    @booking.update(booking_params)
-    redirect_to offers_path
+    @booking.status = params[:status]
+    @booking.save
+    redirect_to bookings_path
   end
 
   def delete
