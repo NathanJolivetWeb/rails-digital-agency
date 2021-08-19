@@ -1,8 +1,9 @@
 <div class="container">
+  <h1>OFFERS</h1>
   <div class="card-grid">
 
-    <%= link_to new_offer_path, class: "btn btn-warning text-white" do %>
-    <i class="fas fa-plus"> Create a new offer</i>
+    <%= link_to new_offer_path, class: "btn btn-warning text-white create-card-btn" do %>
+    <i class="fas fa-plus"></i>
     <% end %>
 
     <% @offers.each do |offer| %>
@@ -13,14 +14,15 @@
             <%= cl_image_tag offer.user.photo.key, crop: :fill, class: 'card-trip-img' %>
             <div>
               <div class="card-trip-infos">
-                <h3><h3><%= offer.title %></h3></h3>
-                <h2><%= offer.user.last_name.capitalize + ' ' +  offer.user.first_name.capitalize %></h2>
-                <p><%= offer.description %></p>
+              <h2><%= offer.user.last_name.capitalize + ' ' +  offer.user.first_name.capitalize %></h2>
+                <h3><%= offer.title %></h3>
+
+
               </div>
               <div class="infos-price">
               <h2 class="card-trip-pricing"><%= offer.price_per_day %>$/day</h2>
-              <h2><i class="far fa-calendar-alt"></i>Full Time</h2>
-              <h2><i class="fas fa-clock"></i>Update-time</h2>
+              <h2><i class="far fa-calendar-alt"></i> Full Time</h2>
+              <h2><i class="fas fa-clock"></i> Update-time</h2>
               </div>
             </div>
           </div>
