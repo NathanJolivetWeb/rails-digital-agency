@@ -4,6 +4,13 @@ class OffersController < ApplicationController
   def show
     @offer = Offer.find(params[:id])
     @booking = Booking.new
+    @bookings = @offer.bookings
+    @bookings_dates = @bookings.map do |booking|
+      {
+        from: booking.begin_date,
+        to: booking.end_date
+      }
+    end
   end
 
   def index
@@ -36,7 +43,7 @@ class OffersController < ApplicationController
       redirect_to offers_path
     end
   end
-  
+
   def update
     if (@offer.user == current_user)
       @offer.update(offer_params)
