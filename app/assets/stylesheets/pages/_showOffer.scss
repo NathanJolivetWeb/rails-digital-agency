@@ -1,29 +1,24 @@
 .show-container{
-  width: 100%;
-  background-color: #DDD;
+  background-color: white;
   padding: 16px;
-  border-radius: 8px;
-  margin-top: 50px;
+  border-radius: 4px;
+  margin-top: 10px;
 }
-
 .show-container > h2, h3{
   text-align: center;
   margin: 20px 0;
 }
-
 .show-dateform{
   display: flex;
   flex-direction: column;
   background-color: #fff;
-  width: 50%;
+  width: 30%;
   padding: 16px;
   border-radius: 8px;
 }
-
 .show-dateform > h3{
   text-align: center;
 }
-
 .form-container{
   display: flex;
   justify-content: space-between;
