@@ -59,35 +59,35 @@ puts "=============================="
 
 # Create offers
 puts "Creating some offers..."
-offer = { description: "Offer1 description seed", category: "front-end", title: "Dev front-end", price_per_day: 200, user: maxence }
+offer = { description: "Offer1 description seed", category: "front-end", title: "Dev Front-end", price_per_day: 200, user: maxence }
 offer1 = Offer.create(offer)
-offer = { description: "Offer2 description seed", category: "front-end", title: "Dev front-end", price_per_day: 300, user: maxence }
+offer = { description: "Offer2 description seed", category: "back-end", title: "Dev Back-end", price_per_day: 300, user: maxence }
 offer2 = Offer.create(offer)
-offer = { description: "Offer3 description seed", category: "back-end", title: "Dev back-end", price_per_day: 150, user: violette }
+offer = { description: "Offer3 description seed", category: "back-end", title: "Dev Back-end", price_per_day: 150, user: violette }
 offer3 = Offer.create(offer)
-offer = { description: "Offer4 description seed", category: "back-end", title: "Dev back-end", price_per_day: 500, user: violette }
+offer = { description: "Offer4 description seed", category: "front-end", title: "Dev Front-end", price_per_day: 500, user: violette }
 offer4 = Offer.create(offer)
-offer = { description: "Offer5 description seed", category: "ux-ui", title: "Dev UX/UI", price_per_day: 160, user: estelle }
+offer = { description: "Offer5 description seed", category: "front-end", title: "Dev Front-end", price_per_day: 160, user: estelle }
 offer5 = Offer.create(offer)
 offer = { description: "Offer6 description seed", category: "ux-ui", title: "Dev UX/UI", price_per_day: 350, user: estelle }
 offer6 = Offer.create(offer)
 offer = { description: "Offer7 description seed", category: "ux-ui", title: "Dev UX/UI", price_per_day: 270, user: luc }
 offer7 = Offer.create(offer)
-offer = { description: "Offer8 description seed", category: "ux-ui", title: "Dev UX/UI", price_per_day: 318, user: luc }
+offer = { description: "Offer8 description seed", category: "back-end", title: "Dev Back-end", price_per_day: 318, user: luc }
 offer8 = Offer.create(offer)
-offer = { description: "Offer9 description seed", category: "ux-ui", title: "Dev UX/UI", price_per_day: 180, user: luc }
+offer = { description: "Offer9 description seed", category: "front-end", title: "Dev Front-end", price_per_day: 180, user: luc }
 offer9 = Offer.create(offer)
-offer = { description: "Offer10 description seed", category: "front-end", title: "Dev front-end", price_per_day: 650, user: nathan }
+offer = { description: "Offer10 description seed", category: "front-end", title: "Dev Front-end", price_per_day: 650, user: nathan }
 offer10 = Offer.create(offer)
-offer = { description: "Offer11 description seed", category: "front-end", title: "Dev front-end", price_per_day: 400, user: nathan }
+offer = { description: "Offer11 description seed", category: "back-end", title: "Dev Back-end", price_per_day: 400, user: nathan }
 offer11 = Offer.create(offer)
-offer = { description: "Offer12 description seed", category: "front-end", title: "Dev front-end", price_per_day: 200, user: dany }
+offer = { description: "Offer12 description seed", category: "back-end", title: "Dev Back-end", price_per_day: 200, user: dany }
 offer12 = Offer.create(offer)
-offer = { description: "Offer13 description seed", category: "back-end", title: "Dev back-end", price_per_day: 170, user: dany }
+offer = { description: "Offer13 description seed", category: "front-end", title: "Dev Front-end", price_per_day: 170, user: dany }
 offer13 = Offer.create(offer)
-offer = { description: "Offer14 description seed", category: "back-end", title: "Dev back-end", price_per_day: 587, user: christophe }
+offer = { description: "Offer14 description seed", category: "front-end", title: "Dev Front-end", price_per_day: 587, user: christophe }
 offer14 = Offer.create(offer)
-offer = { description: "Offer15 description seed", category: "back-end", title: "Dev back-end", price_per_day: 666, user: christophe }
+offer = { description: "Offer15 description seed", category: "back-end", title: "Dev Back-end", price_per_day: 666, user: christophe }
 offer15 = Offer.create(offer)
 
 puts "Congrats, #{Offer.count} offers with  user was created!"
@@ -96,21 +96,21 @@ puts "=============================="
 #Create bookings
 
 puts "Creating some bookings ..."
-booking1 = { begin_date: 20210822, end_date: 20211206, user: maxence, offer: offer15 }
-booking2 = { begin_date: 20210827, end_date: 20211105, user: maxence, offer: offer14 }
-booking3 = { begin_date: 20210828, end_date: 20211203, user: violette, offer: offer13 }
-booking4 = { begin_date: 20210826, end_date: 20211128, user: violette, offer: offer12 }
-booking5 = { begin_date: 20210825, end_date: 20211125, user: estelle, offer: offer11 }
-booking6 = { begin_date: 20210821, end_date: 20211105, user: estelle, offer: offer10 }
-booking7 = { begin_date: 20210823, end_date: 20211103, user: luc, offer: offer9 }
-booking8 = { begin_date: 20210824, end_date: 20211102, user: luc, offer: offer8 }
-booking9 = { begin_date: 20210821, end_date: 20211110, user: nathan, offer: offer7 }
-booking10 = { begin_date: 20210920, end_date: 20211112, user: nathan, offer: offer6 }
-booking11 = { begin_date: 20210828, end_date: 20211113, user: dany, offer: offer5 }
-booking12 = { begin_date: 20210829, end_date: 20211115, user: dany, offer: offer4 }
-booking13 = { begin_date: 20210830, end_date: 20211120, user: christophe, offer: offer3 }
-booking14 = { begin_date: 20210831, end_date: 20211112, user: christophe, offer: offer2 }
-booking15 = { begin_date: 20210825, end_date: 20211116, user: christophe, offer: offer1 }
+booking1 = { begin_date: 20210822, end_date: 20210906, user: maxence, offer: offer15 }
+booking2 = { begin_date: 20210827, end_date: 20210905, user: maxence, offer: offer14 }
+booking3 = { begin_date: 20210828, end_date: 20210903, user: violette, offer: offer13 }
+booking4 = { begin_date: 20210826, end_date: 20210928, user: violette, offer: offer12 }
+booking5 = { begin_date: 20210825, end_date: 20210925, user: estelle, offer: offer11 }
+booking6 = { begin_date: 20210821, end_date: 20210905, user: estelle, offer: offer10 }
+booking7 = { begin_date: 20210823, end_date: 20210903, user: luc, offer: offer9 }
+booking8 = { begin_date: 20210824, end_date: 20210902, user: luc, offer: offer8 }
+booking9 = { begin_date: 20210821, end_date: 20210910, user: nathan, offer: offer7 }
+booking10 = { begin_date: 20210920, end_date: 20210922, user: nathan, offer: offer6 }
+booking11 = { begin_date: 20210828, end_date: 20210913, user: dany, offer: offer5 }
+booking12 = { begin_date: 20210829, end_date: 20210915, user: dany, offer: offer4 }
+booking13 = { begin_date: 20210830, end_date: 20210920, user: christophe, offer: offer3 }
+booking14 = { begin_date: 20210831, end_date: 20210912, user: christophe, offer: offer2 }
+booking15 = { begin_date: 20210825, end_date: 20210916, user: christophe, offer: offer1 }
 
 [booking1, booking2, booking3, booking4, booking5, booking6, booking7, booking8, booking9, booking10, booking11, booking12, booking13, booking14, booking15].each do |attributes|
   booking = Booking.create!(attributes)
