@@ -87,21 +87,21 @@ puts "=============================="
 #Create bookings
 
 puts "Creating 6 bookings ..."
-booking1 = { begin_date: 20210822, end_date: 20211206, user: maxence, offer: offer15  }
-booking2 = { begin_date: 20210827, end_date: 20211105, user: maxence, offer: offer14 }
-booking3 = { begin_date: 20210828, end_date: 20211203, user: violette, offer: offer13  }
-booking4 = { begin_date: 20210826, end_date: 20211128, user: violette, offer: offer12 }
-booking5 = { begin_date: 20210825, end_date: 20211125, user: estelle, offer: offer11 }
-booking6 = { begin_date: 20210821, end_date: 20211105, user: estelle, offer: offer10 }
-booking7 = { begin_date: 20210823, end_date: 20211103, user: luc, offer: offer9 }
-booking8 = { begin_date: 20210824, end_date: 20211102, user: luc, offer: offer8 }
-booking9 = { begin_date: 20210821, end_date: 20211110, user: nathan, offer: offer7 }
-booking10 = { begin_date: 20210920, end_date: 20211112, user: nathan, offer: offer6 }
-booking11 = { begin_date: 20210828, end_date: 20211113, user: dany, offer: offer5 }
-booking12 = { begin_date: 20210829, end_date: 20211115, user: dany, offer: offer4 }
-booking13 = { begin_date: 20210830, end_date: 20211120, user: christophe, offer: offer3 }
-booking14 = { begin_date: 20210831, end_date: 20211112, user: christophe, offer: offer2 }
-booking15 = { begin_date: 20210825, end_date: 20211116, user: christophe, offer: offer1 }
+booking1 = { begin_date: 20210822, end_date: 20211206, user: maxence, offer: offer15.id }
+booking2 = { begin_date: 20210827, end_date: 20211105, user: maxence, offer: offer14.id }
+booking3 = { begin_date: 20210828, end_date: 20211203, user: violette, offer: offer13.id }
+booking4 = { begin_date: 20210826, end_date: 20211128, user: violette, offer: offer12.id }
+booking5 = { begin_date: 20210825, end_date: 20211125, user: estelle, offer: offer11.id }
+booking6 = { begin_date: 20210821, end_date: 20211105, user: estelle, offer: offer10.id }
+booking7 = { begin_date: 20210823, end_date: 20211103, user: luc, offer: offer9.id }
+booking8 = { begin_date: 20210824, end_date: 20211102, user: luc, offer: offer8.id }
+booking9 = { begin_date: 20210821, end_date: 20211110, user: nathan, offer: offer7.id }
+booking10 = { begin_date: 20210920, end_date: 20211112, user: nathan, offer: offer6.id }
+booking11 = { begin_date: 20210828, end_date: 20211113, user: dany, offer: offer5.id }
+booking12 = { begin_date: 20210829, end_date: 20211115, user: dany, offer: offer4.id }
+booking13 = { begin_date: 20210830, end_date: 20211120, user: christophe, offer: offer3.id }
+booking14 = { begin_date: 20210831, end_date: 20211112, user: christophe, offer: offer2.id }
+booking15 = { begin_date: 20210825, end_date: 20211116, user: christophe, offer: offer1.id }
 
 
 [booking1, booking2, booking3, booking4, booking5, booking6, booking7, booking8, booking9, booking10, booking11, booking12, booking13, booking14, booking15].each do |attributes|
