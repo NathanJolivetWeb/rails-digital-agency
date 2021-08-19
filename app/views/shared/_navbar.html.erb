@@ -1,6 +1,6 @@
 <div class="navbar">
   <%= link_to root_path, class: "navbar-brand" do %>
-    <%= image_tag "digital-logo.png", class: "logonavbar" %>
+    <%= image_tag "logo2.png", class: "logonavbar" %>
     <% end %>
     <%= render 'shared/searchbar' %>
     <div class="link">
@@ -13,7 +13,7 @@
         </div>
       </div>
       <% else %>
-      <%= link_to "Sign in", new_user_session_path, class: "btn-navbar" %>
+      <%= link_to "Login", new_user_session_path, class: "btn-navbar" %>
       <%= link_to "Sign up", new_user_registration_path, class: "btn-navbar2" %>
       <% end %>
     </div>

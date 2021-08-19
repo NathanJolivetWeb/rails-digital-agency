@@ -4,11 +4,11 @@
 
 .icon{
   font-size: 35px;
-  color: #ff9c00;
+  color: $orange;
   margin: 0 10px;
 }
 .icon:hover{
-  color: #cc8005;
+  color: $green;
   transition: 0.5s;
 }
 
