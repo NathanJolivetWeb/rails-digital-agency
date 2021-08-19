@@ -1,5 +1,5 @@
 class OffersController < ApplicationController
-  before_action :offer_id, only: %i[show edit delete update]
+  before_action :offer_id, only: %i[show edit destroy update]
 
   def show
     @offer = Offer.find(params[:id])
@@ -32,7 +32,7 @@ class OffersController < ApplicationController
     @offer.user = @user
 
     if @offer.save!
-      redirect_to offers_path
+      redirect_to offer_path(@offer.id)
     else
       render :new
     end
@@ -47,6 +47,13 @@ class OffersController < ApplicationController
   def update
     if (@offer.user == current_user)
       @offer.update(offer_params)
+    end
+    redirect_to offers_path
+  end
+
+  def destroy
+    if (@offer.user == current_user)
+      @offer.destroy
     end
     redirect_to offers_path
   end
