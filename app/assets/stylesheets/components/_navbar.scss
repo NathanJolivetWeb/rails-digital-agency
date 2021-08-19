@@ -13,7 +13,7 @@
   display: flex;
 }
 .btn-navbar2{
-  background-color: #ff9c00;
+  background-color: $orange;
   padding: 6px 16px;
   border-radius: 4px;
   color: white;
@@ -25,7 +25,7 @@
   color: white;
 }
 .btn-navbar{
-  background-color: lightgray;
+  background-color: $green;
   padding: 6px 16px;
   border-radius: 4px;
   color: white;
@@ -66,9 +66,9 @@ list-style: none;
   background-color: white;
 }
 
-
 /* -------------- */
 /* CSS search bar */
+
 .searchbar{
   border-radius: 20px 0 0 20px;
   width: 400px;
@@ -78,18 +78,15 @@ list-style: none;
   border-color: black;
   height: 40px;
 }
-
 .searchbar:focus{
   outline: none;
 }
-
-
 .btn-searchbar{
   border-radius: 0 20px 20px 0;
   position: absolute;
   border-left: none;
   font-size: 23px;
   background-color: RGB(255, 255, 255);
-  color: #ff9c00;
+  color: $orange;
   border-color: black;
 }
