@@ -1,26 +1,32 @@
 <div class="container">
-  <div class="align-self-start">
-    <%= link_to offers_path, class: "btn btn-success mt-2" do %>
-     <i class="fas fa-undo-alt"> Back to offers</i>
-    <% end %>
-    <% if (@offer.user == current_user) %>
-      <%= link_to edit_offer_path(@offer.id), class: "btn btn-success mt-2" do %>
-       <i class="fas fa-pencil-alt"> Edit my offer</i>
-      <% end %>
-    <% end %>
-    <% if (@offer.user == current_user) %>
-      <%= link_to offer_path(@offer.id), method: :delete, data: { confirm: "Are you sure you want to remove your offer ?"}, class: "btn btn-warning text-white mt-2" do %>
-        <i class="far fa-trash-alt"></i>
-      <% end %>
-    <% end %>
-  </div>
+
 
   <div class="show-container">
-    <%= cl_image_tag @offer.user.photo.key, crop: :fill, class: 'avatar-big'%>
-    <h2><%= @offer.title %></h2>
-    <h2><%= @offer.user.first_name %> <%= @offer.user.last_name %></h2>
+    <div class="title-show-container">
+      <%= cl_image_tag @offer.user.photo.key, crop: :fill, class: 'avatar-big mr-5'%>
+      <div class="mr-auto">
+        <h2><%= @offer.user.first_name %> <%= @offer.user.last_name %></h2>
+        <h2><%= @offer.title %></h2>
+        <h3><%= @offer.price_per_day %> € par jour</h3>
+      </div>
+      <div class="d-flex flex-column align-self-start">
+        <%= link_to offers_path, class: "btn btn-success mt-2" do %>
+          <i class="fas fa-undo-alt"> Back to offers</i>
+        <% end %>
+        <% if (@offer.user == current_user) %>
+          <%= link_to edit_offer_path(@offer.id), class: "btn btn-success mt-2" do %>
+            <i class="fas fa-pencil-alt"> Edit my offer</i>
+          <% end %>
+        <% end %>
+        <% if (@offer.user == current_user) %>
+          <%= link_to offer_path(@offer.id), method: :delete, data: { confirm: "Are you sure you want to remove your offer ?"}, class: "btn btn-warning text-white mt-2" do %>
+            <i class="far fa-trash-alt"></i>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
     <div class="form-container">
-    <p><%= @offer.description %></p>
+      <p><%= @offer.description %></p>
       <div class="show-dateform">
           <h3>Book <%= @offer.user.first_name %></h3>
           <%= simple_form_for [ @offer, @booking ] do |f|%>
@@ -32,8 +38,8 @@
                              input_html: { id: "range_end", class: "d-none" }, label: false %>
           <%= f.submit class: "btn btn-warning text-white" %>
           <% end %>
+          <div id="booking-form-div" data-bookings="<%= @bookings_dates.to_json %>">
       </div>
-      <div id="booking-form-div" data-bookings="<%= @bookings_dates.to_json %>">
     </div>
   </div>
 </div>
