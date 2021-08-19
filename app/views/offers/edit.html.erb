@@ -3,9 +3,9 @@
   <%= f.input :title %>
   <%= f.input :description %>
   <%= f.input :price_per_day %>
-  <%= link_to offer_path(@offer.id), class: "btn btn-primary mt-2" do %>
+  <%= link_to offer_path(@offer.id), class: "btn btn-success mt-2" do %>
     <i class="fas fa-undo-alt"> Back to your offer</i>
   <% end %>
-  <%= f.button :submit, "Update offer", class: "btn btn-success mt-2" %>
+  <%= f.button :submit, "Update offer", class: "btn btn-warning text-white mt-2" %>
   <% end %>
 </div>
