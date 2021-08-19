@@ -119,3 +119,6 @@ end
 
 puts "Congrates, #{Booking.count} bookings with random user and offer were created!"
 puts "=============================="
+
+# Create reviews
+puts "Creating some reviews ..."
