@@ -1,31 +1,39 @@
 <div class="mt-3 container">
   <h2>Sign up</h2>
 
-  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= f.error_notification %>
+    <div class="form-contain2">
+    <div class="mt-5 right">
+          <%= image_tag "undraw_Forms_re_pkrt.png", class: "illu-right" %>
+        </div>
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= f.error_notification %>
 
-    <div class="form-inputs">
-      <%= f.input :email,
-                  required: false,
-                  autofocus: true,
-                  input_html: { autocomplete: "email" }%>
-      <%= f.input :first_name %>
-      <%= f.input :last_name %>
-      <%= f.input :password,
-                  required: false,
-                  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                  input_html: { autocomplete: "new-password" } %>
-      <%= f.input :password_confirmation,
-                  required: false,
-                  input_html: { autocomplete: "new-password" } %>
-      <%= f.input :photo, as: :file %>
+        <div class="form-inputs login-form2">
+          <%= f.input :email,
+                      required: false,
+                      autofocus: true,
+                      input_html: { autocomplete: "email" }%>
+          <%= f.input :first_name %>
+          <%= f.input :last_name %>
+          <%= f.input :password,
+                      required: false,
+                      hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                      input_html: { autocomplete: "new-password" } %>
+          <%= f.input :password_confirmation,
+                      required: false,
+                      input_html: { autocomplete: "new-password" } %>
+          <%= f.input :photo, as: :file %>
+        </div>
+
+        <div class="form-actions2">
+          <%= f.button :submit, "Sign up", class:'btn btn-warning text-white' %>
+          <%= render "devise/shared/links" %>
+        </div>
+      <% end %>
+
+
     </div>
 
-    <div class="form-actions">
-      <%= f.button :submit, "Sign up", class:'btn btn-warning text-white' %>
-      <%= render "devise/shared/links" %>
-    </div>
-  <% end %>
 
 
 </div>

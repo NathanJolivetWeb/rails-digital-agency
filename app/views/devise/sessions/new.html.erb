@@ -1,8 +1,13 @@
+
+
 <div class="mt-5 container">
-  <h2>Sign in</h2>
+
+<div class="form-contain">
 
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="mt-5 form-inputs">
+  <h2>Sign in</h2>
+    <div class="mt-5 form-inputs login-form">
+
       <%= f.input :email,
                   required: false,
                   autofocus: true,
@@ -19,5 +24,9 @@
     </div>
   <% end %>
 
+   <div class="mt-5 right">
+   <%= image_tag "undraw_Forms_re_pkrt.png", class: "illu-right" %>
+  </div>
+</div>
 
 </div>
