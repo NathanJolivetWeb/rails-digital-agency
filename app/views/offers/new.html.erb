@@ -1,6 +1,7 @@
 <div class="container">
   <%= simple_form_for(@offer) do |f| %>
   <%= f.input :title %>
+  <%= f.input :category, collection: ["front-end", "back-end", "ux-ui"], default: 0 %>
   <%= f.input :description %>
   <%= f.input :price_per_day %>
   <%= f.submit %>
