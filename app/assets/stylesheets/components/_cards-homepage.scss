@@ -1,0 +1,64 @@
+.garniture-containe{
+  display: flex;
+  justify-content: center;
+   background-color: #ffffff;
+   margin-top: 50px;
+   margin-bottom: 120px;
+
+}
+
+.first-illu{
+  width: auto;
+  height: 250px;
+}
+
+.h-card p{
+  width: 200px;
+  font-family: "Nunito", "Helvetica", "sans-serif";
+  font-weight: bold;
+}
+
+.h-card{
+  padding: 0 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title-HP{
+  text-align: center;
+  font-family: "Nunito", "Helvetica", "sans-serif";
+  margin-top: 50px;
+}
+
+
+/* banner after cards*/
+
+.contain-littlebanner{
+  width: auto;
+  height: 500px;
+  background-color: #ffffff;
+  background-image: linear-gradient(to left, #FFFFFF00, #000000), asset-url('littlebannerdev.jpg');
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 80px 60px;
+  border-radius: 6px;
+  display: flex;
+  align-items: flex-start;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  .btn-littlebanner{
+    color: white;
+    font-family: "Nunito", "Helvetica", "sans-serif";
+    padding: 12px 24px;
+    background-color: $orange;
+    border-radius: 6px;
+    margin-left: 180px;
+    margin-top: 150px;
+  }
+}
+
+.btn-littlebanner:hover{
+  opacity: 0.7;
+  transform: scale(1.02);
+}

@@ -1,6 +1,37 @@
 
 <%= render "shared/banner" %>
 
+
+  <h1 class="title-HP">Concern Digital Agency :</h1>
+  <div class="garniture-containe">
+    <div class="row">
+    <div class="col-4">
+    <div class="h-card">
+      <%= image_tag "find.png", class: "first-illu" %>
+      <p>1-Trouvez facilement des compétences pointues
+        pour vos projets et contactez gratuitement les
+        profils vérifiés de votre choix. </p>
+    </div>
+    </div>
+    <div class="col-4">
+    <div class="h-card">
+      <%= image_tag "work.png", class: "first-illu" %>
+      <p>2-Travaillez main dans la main : décidez
+        ensemble des modalités de la mission puis collaborez
+        en direct. </p>
+    </div>
+    </div>
+    <div class="col-4">
+    <div class="h-card">
+      <%= image_tag "programming.png", class: "first-illu" %>
+      <p>3-Recommencez. La mission est terminée ? Débloquez
+        le paiement en un clic et partez à la recherche de votre
+        prochain talent ! </p>
+    </div>
+    </div>
+    </div>
+  </div>
+
   <div class="grid-homepage">
 
     <%= link_to offers_path do %>
@@ -28,7 +59,19 @@
     <%end%>
 
   </div>
+
+  <% if user_signed_in?  %>
+    <div class="contain-littlebanner d-none">
+      <%= link_to "Sign up", new_user_registration_path, class: "btn btn-littlebanner"  %>
+    </div>
+  <% else  %>
+    <div class="contain-littlebanner">
+      <%= link_to "Sign up", new_user_registration_path, class: "btn btn-littlebanner"  %>
+    </div>
+  <% end %>
+
 </div>
+
 
 <script>
   document.getElementById("navbarHeight").classList.remove("container-navbar");
