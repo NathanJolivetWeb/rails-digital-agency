@@ -7,8 +7,10 @@ Rails.application.routes.draw do
   resources :offers, only: %i[index show new create update edit destroy] do
     resources :bookings, only: %i[new create]
   end
+
   resources :bookings, only: %i[index show update edit destroy] do
     resources :reviews, only: %i[new create index]
   end
+  
   resources :reviews, only: %i[destroy edit update]
 end
