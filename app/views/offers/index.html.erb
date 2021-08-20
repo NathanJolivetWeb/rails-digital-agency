@@ -24,7 +24,7 @@
                     nbrHours = comparatedDate / ( 60 * 60 )
 
                     if (comparatedDate < 86400)
-                      "#{pluralize nbrHours, "hours", plural: "hour"} ago"
+                      "#{pluralize nbrHours, "hour", plural: "hours"} ago"
                     else
                       "#{pluralize nbrDays, "day", plural: "days" } ago"
                     end
