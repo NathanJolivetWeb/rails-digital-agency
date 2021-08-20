@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :params_id, only: %i[show edit delete update]
+  before_action :params_id, only: %i[show edit delete update destroy]
   before_action :offer_id, only: %i[new create]
   def new
     @booking = Booking.new
@@ -33,8 +33,10 @@ class BookingsController < ApplicationController
     redirect_to bookings_path
   end
 
-  def delete
-    @booking.destroy
+  def destroy
+    if (@booking.user == current_user)
+      @booking.destroy
+    end
     redirect_to offers_path
   end
 
