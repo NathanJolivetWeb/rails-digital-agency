@@ -16,7 +16,7 @@
                 <h2><%= booking.offer.user.last_name.capitalize + ' ' +  booking.offer.user.first_name.capitalize %></h2>
                 <h3><%= booking.offer.title %></h3>
               </div>
-              <div class="infos-price">
+              <div class="infos-price pt-2">
                 <h2 class="card-trip-pricing"><%= booking.begin_date %></h2>
                 <h2><%= booking.end_date %></h2>
               </div>
@@ -53,7 +53,7 @@
                 <h3><%= booking.offer.title %></h3>
               </div>
         <% end %>
-              <div class="infos-price">
+              <div class="infos-price pt-2">
                 <h2><%= booking.offer.price_per_day %>$/day</h2>
                 <h2><i class="fas fa-clock"></i>
                 <%=
@@ -69,7 +69,7 @@
                 </h2>
               </div>
 
-              <div class='text-center mb-2'>
+              <div class='footer-card text-center mb-2'>
                 <% if booking.status == "pending" %>
                   <%=link_to booking_path(booking, status: "declined"), method: :patch, class:'text-danger mr-5' do %>
                     <i class="fas fa-times"></i>

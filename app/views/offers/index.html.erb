@@ -12,11 +12,11 @@
             <div class="card-trip-infos">
               <h2><%= offer.user.last_name.capitalize + ' ' +  offer.user.first_name.capitalize %></h2>
               <h3>Dev <%= offer.category.capitalize %></h3>
+              <h2 class="card-trip-pricing"><%= offer.price_per_day %> $ / day</h2>
               </div>
-              <div class="infos-price">
-                <h2 class="card-trip-pricing"><%= offer.price_per_day %>$/day</h2>
-                <h2><i class="far fa-calendar-alt"></i> Full Time</h2>
-                <h2><i class="fas fa-clock"></i>
+              <div class="infos-price pt-2">
+                <h2 class="ml-2"><i class="far fa-calendar-alt"></i> Full Time</h2>
+                <h2 class="mr-2"><i class="fas fa-clock"></i>
                   <%=
                     secondsInDay = 24 * 60 * 60
                     comparatedDate = (Time.now - offer.created_at.localtime).to_i
