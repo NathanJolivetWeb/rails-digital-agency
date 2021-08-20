@@ -2,13 +2,14 @@ class ReviewsController < ApplicationController
   before_action :review_id, only: %i[delete edit update]
   def new
     @review = Review.new
-    @booking = booking.find(params[:booking_id])
+    @booking = Booking.find(params[:booking_id])
   end
 
   def create
+    @booking = Booking.find(params[:booking_id])
     @review = Review.new(review_params)
     @review.booking = @booking
-    if @review.save
+    if @review.save!
       redirect_to bookings_path
     else
       render :new
