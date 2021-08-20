@@ -24,56 +24,61 @@
       </div>
     </div>
     <div class="form-container">
-      <div class="flex-column">
-        <div>
-          <p><%= @offer.description %></p>
-        </div>
-          <div class="mr-auto">
-            <% @reviews.each do |review| %>
-              <div class="flex-column">
-                <p><%= review.content %></p>
-                <% case review.rating  %>
-                <% when 0 %>
-                  <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i>
-                <% when 1 %>
-                  <i class="fas fa-star awesome-yellow"></i> <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i>
-                <% when 2 %>
-                  <i class="fas fa-star awesome-yellow"></i> <i class="fas fa-star awesome-yellow"></i> <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i>
-                <% when 3 %>
-                  <i class="fas fa-star awesome-yellow"> </i> <i class="fas fa-star awesome-yellow"></i> <i class="fas fa-star awesome-yellow"></i> <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i>
-                <% when 4 %>
-                  <i class="fas fa-star awesome-yellow"></i> <i class="fas fa-star awesome-yellow"></i> <i class="fas fa-star awesome-yellow"></i> <i class="fas fa-star awesome-yellow"></i> <i class="far fa-star awesome-lightgrey"></i>
-                <% when 5 %>
-                  <i class="fas fa-star awesome-yellow"></i> <i class="fas fa-star awesome-yellow"></i> <i class="fas fa-star awesome-yellow"></i> <i class="fas fa-star awesome-yellow"></i> <i class="fas fa-star awesome-yellow"></i>
-                <% end %>
-              </div>
-            <% end %>
-            <% booking_review = current_user.unable_to_review?(@offer)  %>
-              <%if booking_review %>
-              <div>
-                <h3>Let a review:</h3>
-                <%= simple_form_for [ booking_review, @review] do |f| %>
-                <%= f.input :content, placeholder: "Content", as: :string %>
-                <%= f.input :rating, placholder: "Rating", as: :integer %>
-                <%= f.submit class: "btn btn-warning text-white" %>
-                <% end %>
-              </div>
-              <% end %>
-          </div>
+      <div class="box-description">
+        <h3>Description</h3>
+        <p><%= @offer.description %></p>
+        <p><%= @offer.description %></p>
+        <p><%= @offer.description %></p>
+        <p><%= @offer.description %></p>
       </div>
-      <div class="show-dateform">
+      <div class="box-review">
+        <h3>Reviews</h3>
+        <% @reviews.each do |review| %>
+          <div class="flex-column">
+            <p><%= review.content %>
+            <% case review.rating  %>
+            <% when 0 %>
+              <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i>
+            <% when 1 %>
+              <i class="fas fa-star awesome-yellow"></i> <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i>
+            <% when 2 %>
+              <i class="fas fa-star awesome-yellow"></i> <i class="fas fa-star awesome-yellow"></i> <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i>
+            <% when 3 %>
+              <i class="fas fa-star awesome-yellow"> </i> <i class="fas fa-star awesome-yellow"></i> <i class="fas fa-star awesome-yellow"></i> <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i>
+            <% when 4 %>
+              <i class="fas fa-star awesome-yellow"></i> <i class="fas fa-star awesome-yellow"></i> <i class="fas fa-star awesome-yellow"></i> <i class="fas fa-star awesome-yellow"></i> <i class="far fa-star awesome-lightgrey"></i>
+            <% when 5 %>
+              <i class="fas fa-star awesome-yellow"></i> <i class="fas fa-star awesome-yellow"></i> <i class="fas fa-star awesome-yellow"></i> <i class="fas fa-star awesome-yellow"></i> <i class="fas fa-star awesome-yellow"></i>
+            <% end %></p>
+          </div>
+          <% end %>
+          <% booking_review = current_user.unable_to_review?(@offer)  %>
+            <%if booking_review %>
+
+          <div>
+            <h3>Let a review:</h3>
+            <%= simple_form_for [ booking_review, @review] do |f| %>
+            <%= f.input :content, placeholder: "Content", as: :string %>
+            <%= f.input :rating, placholder: "Rating", as: :integer %>
+            <%= f.submit class: "btn btn-warning text-white" %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+
+        <div class="box-form">
           <h3>Book <%= @offer.user.first_name %></h3>
           <%= simple_form_for [ @offer, @booking ] do |f|%>
           <%= f.input :begin_date, placeholder: "Start", as: :string,
-                               required: false,
-                               input_html: { id: "range_start", class: "d-none" }, label: false %>
+                              required: false,
+                              input_html: { id: "range_start", class: "d-none" }, label: false %>
           <%= f.input :end_date, placeholder: "End", as: :string,
-                             required: false,
-                             input_html: { id: "range_end", class: "d-none" }, label: false %>
+                            required: false,
+                            input_html: { id: "range_end", class: "d-none" }, label: false %>
           <%= f.submit class: "btn btn-warning text-white" %>
           <% end %>
           <div id="booking-form-div" data-bookings="<%= @bookings_dates.to_json %>">
+        </div>
       </div>
-    </div>
   </div>
 </div>
