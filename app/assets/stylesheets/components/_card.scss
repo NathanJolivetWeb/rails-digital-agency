@@ -3,6 +3,7 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   width: 100%;
+  position: relative;
   &:hover{
     transform: scale(1.05);
     transition: 0.3s;
@@ -169,4 +170,9 @@ a {
   grid-gap: 24px;
   width: 100%;
   margin-bottom: 24px;
+}
+.booking-trash{
+  position: absolute;
+  top: 0;
+  right: 0;
 }

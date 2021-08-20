@@ -61,35 +61,35 @@ puts "=============================="
 
 # Create offers
 puts "Creating some offers..."
-offer = { description: "Offer1 description seed", category: "front-end", title: "Dev Front-end", price_per_day: 200, user: maxence }
+offer = { description: "Fraichement sortis du Wagon, disponible et passionné", category: "front-end", title: "Dev Front-end", price_per_day: 200, user: maxence, langage1: "Ruby", level1: 3, langage2: "Python", level2: 2  }
 offer1 = Offer.create(offer)
-offer = { description: "Offer2 description seed", category: "back-end", title: "Dev Back-end", price_per_day: 300, user: maxence }
+offer = { description: "Fraichement sortis du Wagon, disponible et passionné", category: "back-end", title: "Dev Back-end", price_per_day: 300, user: maxence, langage1: "Ruby" , level1: 2 , langage2: "Python", level2: 2 }
 offer2 = Offer.create(offer)
-offer = { description: "Offer3 description seed", category: "back-end", title: "Dev Back-end", price_per_day: 150, user: violette }
+offer = { description: "Etudiante au Wagon Lille, le code est ma passion", category: "back-end", title: "Dev Back-end", price_per_day: 150, user: violette, langage1: "Ruby" , level1: 3, langage2: "Python", level2: 1 }
 offer3 = Offer.create(offer)
-offer = { description: "Offer4 description seed", category: "front-end", title: "Dev Front-end", price_per_day: 500, user: violette }
+offer = { description: "Etudiante au Wagon Lille, le code est ma passion", category: "front-end", title: "Dev Front-end", price_per_day: 500, user: violette, langage1: "Python" , level1: 3, langage2: "Ruby", level2: 2  }
 offer4 = Offer.create(offer)
-offer = { description: "Offer5 description seed", category: "front-end", title: "Dev Front-end", price_per_day: 160, user: estelle }
+offer = { description: "Les navbars sont ma passion. Ex-étudiante le Wagon Lille", category: "front-end", title: "Dev Front-end", price_per_day: 160, user: estelle, langage1: "Ruby" , level1: 2, langage2: "Python", level2: 1 }
 offer5 = Offer.create(offer)
-offer = { description: "Offer6 description seed", category: "ux-ui", title: "Dev UX/UI", price_per_day: 350, user: estelle }
+offer = { description: "Les navbars sont ma passion. Ex-étudiante le Wagon Lille", category: "ux-ui", title: "Dev UX/UI", price_per_day: 350, user: estelle, langage1: "Ruby" , level1: 2 , langage2: "Python", level2: 2 }
 offer6 = Offer.create(offer)
-offer = { description: "Offer7 description seed", category: "ux-ui", title: "Dev UX/UI", price_per_day: 270, user: luc }
+offer = { description: "J'ai étudié au Wagon Lille, je code tout en tout", category: "ux-ui", title: "Dev UX/UI", price_per_day: 270, user: luc, langage1: "Python" , level1: 3, langage2: "Ruby", level2: 3}
 offer7 = Offer.create(offer)
-offer = { description: "Offer8 description seed", category: "back-end", title: "Dev Back-end", price_per_day: 318, user: luc }
+offer = { description: "J'ai étudié au Wagon Lille, je code tout en tout", category: "back-end", title: "Dev Back-end", price_per_day: 318, user: luc, langage1: "Ruby" , level1: 2 , langage2: "Python", level2: 2 }
 offer8 = Offer.create(offer)
-offer = { description: "Offer9 description seed", category: "front-end", title: "Dev Front-end", price_per_day: 180, user: luc }
+offer = { description: "J'ai étudié au Wagon Lille, je code tout en tout", category: "front-end", title: "Dev Front-end", price_per_day: 180, user: luc, langage1: "Ruby" , level1: 2, langage2: "Python", level2: 2 }
 offer9 = Offer.create(offer)
-offer = { description: "Offer10 description seed", category: "front-end", title: "Dev Front-end", price_per_day: 650, user: nathan }
+offer = { description: "J'aime le code comme le Wagon, pro du front et expert du back", category: "front-end", title: "Dev Front-end", price_per_day: 650, user: nathan, langage1: "Python" , level1: 3, langage2: "Ruby", level2: 1 }
 offer10 = Offer.create(offer)
-offer = { description: "Offer11 description seed", category: "back-end", title: "Dev Back-end", price_per_day: 400, user: nathan }
+offer = { description: "J'aime le code comme le Wagon, pro du front et expert du back", category: "back-end", title: "Dev Back-end", price_per_day: 400, user: nathan, langage1: "Ruby" , level1: 2 , langage2: "Python", level2: 2 }
 offer11 = Offer.create(offer)
-offer = { description: "Offer12 description seed", category: "back-end", title: "Dev Back-end", price_per_day: 200, user: dany }
+offer = { description: "Développeur Web, bootcamp le Wagon Lille, jeune et dynamique", category: "back-end", title: "Dev Back-end", price_per_day: 200, user: dany, langage1: "Python" , level1: 3, langage2: "Ruby", level2: 3 }
 offer12 = Offer.create(offer)
-offer = { description: "Offer13 description seed", category: "front-end", title: "Dev Front-end", price_per_day: 170, user: dany }
+offer = { description: "Développeur Web, bootcamp le Wagon Lille, jeune et dynamique", category: "front-end", title: "Dev Front-end", price_per_day: 170, user: dany, langage1: "Ruby" , level1: 2 , langage2: "Python", level2: 1 }
 offer13 = Offer.create(offer)
-offer = { description: "Offer14 description seed", category: "front-end", title: "Dev Front-end", price_per_day: 587, user: christophe }
+offer = { description: "Développeur web, bootcamp le Wagon Lille, disponible et frais", category: "front-end", title: "Dev Front-end", price_per_day: 587, user: christophe, langage1: "Python" , level1: 2, langage2: "Ruby", level2: 2 }
 offer14 = Offer.create(offer)
-offer = { description: "Offer15 description seed", category: "back-end", title: "Dev Back-end", price_per_day: 666, user: christophe }
+offer = { description: "Développeur web, bootcamp le Wagon Lille, disponible et frais", category: "back-end", title: "Dev Back-end", price_per_day: 666, user: christophe, langage1: "Ruby" , level1: 2 , langage2: "Python", level2: 1}
 offer15 = Offer.create(offer)
 
 puts "Congrats, #{Offer.count} offers with  user was created!"

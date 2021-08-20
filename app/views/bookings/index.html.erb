@@ -1,17 +1,22 @@
 <div class="container d-flex justify-content-around mt-5 mb-5">
 
   <div class="class-applied text-center">
-    <h1>Offers apply</h1>
+    <h1>Offers Apply</h1>
     <div class="card-grid-booking">
       <% @bookings.each do |booking| %>
         <div class="card-trip">
+          <% if (booking.user == current_user) %>
+            <%= link_to booking_path(booking.id), method: :delete, data: { confirm: "Are you sure you want to booking your offer ?"}, class: "btn btn-warning text-white booking-trash" do %>
+              <i class="far fa-trash-alt"></i>
+            <% end %>
+          <% end %>
           <%= link_to offer_path(booking.offer) do %>
             <%= cl_image_tag booking.offer.user.photo.key, crop: :fill, class: 'card-trip-img' %>
               <div class="card-trip-infos">
                 <h2><%= booking.offer.user.last_name.capitalize + ' ' +  booking.offer.user.first_name.capitalize %></h2>
                 <h3><%= booking.offer.title %></h3>
               </div>
-              <div class="infos-price">
+              <div class="infos-price pt-2">
                 <h2 class="card-trip-pricing"><%= booking.begin_date %></h2>
                 <h2><%= booking.end_date %></h2>
               </div>
@@ -35,6 +40,11 @@
     <div class="card-grid-booking">
       <% @my_offers_bookings.each do |booking| %>
       <div class="card-trip">
+        <% if (booking.offer.user == current_user) %>
+          <%= link_to booking_path(booking.id), method: :delete, data: { confirm: "Are you sure you want to booking your offer ?"}, class: "btn btn-warning text-white booking-trash" do %>
+            <i class="far fa-trash-alt"></i>
+          <% end %>
+        <% end %>
         <%= link_to offer_path(booking.offer) do %>
           <%= cl_image_tag booking.offer.user.photo.key, crop: :fill, class: 'card-trip-img' %>
             <div>
@@ -43,23 +53,25 @@
                 <h3><%= booking.offer.title %></h3>
               </div>
         <% end %>
-              <div class="infos-price">
+              <div class="infos-price pt-2">
                 <h2><%= booking.offer.price_per_day %>$/day</h2>
                 <h2><i class="fas fa-clock"></i>
                 <%=
-                secondsInDay = 24 * 60 * 60
-                comparatedDate = (Time.now - booking.offer.created_at.localtime).to_i
-                days = comparatedDate / secondsInDay
-                if (comparatedDate < 86400)
-                "#{comparatedDate / ( 60 * 60 )} hours ago"
-                else
-                "#{days} days ago"
-                end
+                  secondsInDay = 24 * 60 * 60
+                  comparatedDate = (Time.now - booking.offer.created_at.localtime).to_i
+                  nbrDays = comparatedDate / secondsInDay
+                  nbrHours = comparatedDate / ( 60 * 60 )
+
+                  if (comparatedDate < 86400)
+                    "#{pluralize nbrHours, "hour", plural: "hours"} ago"
+                  else
+                    "#{pluralize nbrDays, "day", plural: "days" } ago"
+                  end
                 %>
                 </h2>
               </div>
 
-              <div class='text-center mb-2'>
+              <div class='footer-card text-center mb-2'>
                 <% if booking.status == "pending" %>
                   <%=link_to booking_path(booking, status: "declined"), method: :patch, class:'text-danger mr-5' do %>
                     <i class="fas fa-times"></i>

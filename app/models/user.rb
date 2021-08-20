@@ -17,4 +17,12 @@ class User < ApplicationRecord
     end
     return bookings
   end
+
+  def unable_to_review?(offer)
+    bookings = offer.bookings
+    bookings.each do |booking|
+      return booking if booking.status == "accepted" && booking.user == self && booking.reviews.blank?
+    end
+    return false
+  end
 end
