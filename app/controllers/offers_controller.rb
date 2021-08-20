@@ -2,7 +2,6 @@ class OffersController < ApplicationController
   before_action :offer_id, only: %i[show edit destroy update]
 
   def show
-    @offer = Offer.find(params[:id])
     @booking = Booking.new
     @bookings = @offer.bookings
     @bookings_dates = @bookings.map do |booking|
@@ -11,12 +10,14 @@ class OffersController < ApplicationController
         to: booking.end_date
       }
     end
+    @review = Review.new
+    @reviews = @offer.reviews
   end
 
   def index
     @offers = Offer.all
     if params[:category].present?
-      @offers = Offer.where("category ilike ?","%#{params[:category]}%")
+      @offers = Offer.where("category ilike ?", "%#{params[:category]}%")
     end
 
     if params[:query].present?
