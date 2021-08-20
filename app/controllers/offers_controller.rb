@@ -19,6 +19,14 @@ class OffersController < ApplicationController
     if params[:category].present?
       @offers = Offer.where("category ilike ?", "%#{params[:category]}%")
     end
+
+    if params[:query].present?
+      sql_query = "
+      offers.category ilike :query
+      OR users.first_name ilike :query
+      OR users.last_name ilike :query"
+      @offers = Offer.joins(:user).where(sql_query, query: "%#{params[:query]}%")
+    end
   end
 
   def new
