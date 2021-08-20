@@ -28,31 +28,38 @@
         <div>
           <p><%= @offer.description %></p>
         </div>
-        <% @bookings.each do |booking|  %>
-          <% if booking.status == "accepted" %>
-            <div class="mr-auto">
-              <% @reviews.each do |review| %>
-                <div class="flex-column">
-                  <p><%= review.content %></p>
-                  <% case review.rating  %>
-                  <% when 0 %>
-                    <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i>
-                  <% when 1 %>
-                    <i class="fas fa-star awesome-yellow"></i> <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i>
-                  <% when 2 %>
-                    <i class="fas fa-star awesome-yellow"></i> <i class="fas fa-star awesome-yellow"></i> <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i>
-                  <% when 3 %>
-                    <i class="fas fa-star awesome-yellow"> </i><i class="fas fa-star awesome-yellow"></i> <i class="fas fa-star awesome-yellow"></i> <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i>
-                  <% when 4 %>
-                    <i class="fas fa-star awesome-yellow"></i> <i class="fas fa-star awesome-yellow"></i> <i class="fas fa-star awesome-yellow"></i> <i class="fas fa-star awesome-yellow"></i> <i class="far fa-star awesome-lightgrey"></i>
-                  <% when 5 %>
-                    <i class="fas fa-star awesome-yellow"></i> <i class="fas fa-star awesome-yellow"></i> <i class="fas fa-star awesome-yellow"></i> <i class="fas fa-star awesome-yellow"></i> <i class="fas fa-star awesome-yellow"></i>
-                  <% end %>
-                </div>
+          <div class="mr-auto">
+            <% @reviews.each do |review| %>
+              <div class="flex-column">
+                <p><%= review.content %></p>
+                <% case review.rating  %>
+                <% when 0 %>
+                  <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i>
+                <% when 1 %>
+                  <i class="fas fa-star awesome-yellow"></i> <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i>
+                <% when 2 %>
+                  <i class="fas fa-star awesome-yellow"></i> <i class="fas fa-star awesome-yellow"></i> <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i>
+                <% when 3 %>
+                  <i class="fas fa-star awesome-yellow"> </i> <i class="fas fa-star awesome-yellow"></i> <i class="fas fa-star awesome-yellow"></i> <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i>
+                <% when 4 %>
+                  <i class="fas fa-star awesome-yellow"></i> <i class="fas fa-star awesome-yellow"></i> <i class="fas fa-star awesome-yellow"></i> <i class="fas fa-star awesome-yellow"></i> <i class="far fa-star awesome-lightgrey"></i>
+                <% when 5 %>
+                  <i class="fas fa-star awesome-yellow"></i> <i class="fas fa-star awesome-yellow"></i> <i class="fas fa-star awesome-yellow"></i> <i class="fas fa-star awesome-yellow"></i> <i class="fas fa-star awesome-yellow"></i>
+                <% end %>
+              </div>
+            <% end %>
+            <% booking_review = current_user.unable_to_review?(@offer)  %>
+              <%if booking_review %>
+              <div>
+                <h3>Let a review:</h3>
+                <%= simple_form_for [ booking_review, @review] do |f| %>
+                <%= f.input :content, placeholder: "Content", as: :string %>
+                <%= f.input :rating, placholder: "Rating", as: :integer %>
+                <%= f.submit class: "btn btn-warning text-white" %>
+                <% end %>
+              </div>
               <% end %>
-            </div>
-          <% end %>
-        <% end %>
+          </div>
       </div>
       <div class="show-dateform">
           <h3>Book <%= @offer.user.first_name %></h3>
