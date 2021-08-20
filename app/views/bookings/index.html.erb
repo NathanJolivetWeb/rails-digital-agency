@@ -5,6 +5,11 @@
     <div class="card-grid-booking">
       <% @bookings.each do |booking| %>
         <div class="card-trip">
+          <% if (booking.user == current_user) %>
+            <%= link_to booking_path(booking.id), method: :delete, data: { confirm: "Are you sure you want to booking your offer ?"}, class: "btn btn-warning text-white booking-trash" do %>
+              <i class="far fa-trash-alt"></i>
+            <% end %>
+          <% end %>
           <%= link_to offer_path(booking.offer) do %>
             <%= cl_image_tag booking.offer.user.photo.key, crop: :fill, class: 'card-trip-img' %>
               <div class="card-trip-infos">
@@ -35,6 +40,11 @@
     <div class="card-grid-booking">
       <% @my_offers_bookings.each do |booking| %>
       <div class="card-trip">
+        <% if (booking.offer.user == current_user) %>
+          <%= link_to booking_path(booking.id), method: :delete, data: { confirm: "Are you sure you want to booking your offer ?"}, class: "btn btn-warning text-white booking-trash" do %>
+            <i class="far fa-trash-alt"></i>
+          <% end %>
+        <% end %>
         <%= link_to offer_path(booking.offer) do %>
           <%= cl_image_tag booking.offer.user.photo.key, crop: :fill, class: 'card-trip-img' %>
             <div>
