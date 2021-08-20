@@ -28,10 +28,10 @@
         <h3>Description</h3>
         <p><%= @offer.description %></p>
         <h3>Langages</h3>
-        <% green = '<i class="fas fa-window-minimize awesome-yellow ml-1"></i>' %>
-        <% lightgrey = '<i class="fas fa-window-minimize awesome-lightgrey mr-1"></i>' %>
-        <p><%= @offer.langage1 %> Level: <%= green.html_safe * @offer.level1  %> <%= lightgrey.html_safe * (3 - @offer.level1)  %> </p>
-        <p><%= @offer.langage2 %> Level: <%= green.html_safe * @offer.level2  %> <%= lightgrey.html_safe * (3 - @offer.level2)  %> </p>
+        <% green = '<i class="fas fa-window-minimize awesome-yellow tick ml-1"></i>' %>
+        <% lightgrey = '<i class="fas fa-window-minimize awesome-lightgrey tick mr-1"></i>' %>
+        <p><%= @offer.langage1 %> level : <%= green.html_safe * @offer.level1  %> <%= lightgrey.html_safe * (3 - @offer.level1)  %> </p>
+        <p><%= @offer.langage2 %> level : <%= green.html_safe * @offer.level2  %> <%= lightgrey.html_safe * (3 - @offer.level2)  %> </p>
       </div>
       <div class="box-review">
         <h3>Reviews</h3>
@@ -40,17 +40,17 @@
             <p><%= review.content %>
             <% case review.rating  %>
             <% when 0 %>
-              <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i>
+              <i class="ml-2 far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i>
             <% when 1 %>
-              <i class="fas fa-star awesome-yellow"></i> <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i>
+              <i class="ml-2 fas fa-star awesome-yellow"></i> <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i>
             <% when 2 %>
-              <i class="fas fa-star awesome-yellow"></i> <i class="fas fa-star awesome-yellow"></i> <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i>
+              <i class="ml-2 fas fa-star awesome-yellow"></i> <i class="fas fa-star awesome-yellow"></i> <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i>
             <% when 3 %>
-              <i class="fas fa-star awesome-yellow"> </i> <i class="fas fa-star awesome-yellow"></i> <i class="fas fa-star awesome-yellow"></i> <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i>
+              <i class="ml-2 fas fa-star awesome-yellow"> </i> <i class="fas fa-star awesome-yellow"></i> <i class="fas fa-star awesome-yellow"></i> <i class="far fa-star awesome-lightgrey"></i> <i class="far fa-star awesome-lightgrey"></i>
             <% when 4 %>
-              <i class="fas fa-star awesome-yellow"></i> <i class="fas fa-star awesome-yellow"></i> <i class="fas fa-star awesome-yellow"></i> <i class="fas fa-star awesome-yellow"></i> <i class="far fa-star awesome-lightgrey"></i>
+              <i class="ml-2 fas fa-star awesome-yellow"></i> <i class="fas fa-star awesome-yellow"></i> <i class="fas fa-star awesome-yellow"></i> <i class="fas fa-star awesome-yellow"></i> <i class="far fa-star awesome-lightgrey"></i>
             <% when 5 %>
-              <i class="fas fa-star awesome-yellow"></i> <i class="fas fa-star awesome-yellow"></i> <i class="fas fa-star awesome-yellow"></i> <i class="fas fa-star awesome-yellow"></i> <i class="fas fa-star awesome-yellow"></i>
+              <i class="ml-2 fas fa-star awesome-yellow"></i> <i class="fas fa-star awesome-yellow"></i> <i class="fas fa-star awesome-yellow"></i> <i class="fas fa-star awesome-yellow"></i> <i class="fas fa-star awesome-yellow"></i>
             <% end %></p>
           </div>
           <% end %>
