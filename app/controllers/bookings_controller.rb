@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :params_id, only: %i[show edit delete update destroy]
+  before_action :params_id, only: %i[show edit update destroy]
   before_action :offer_id, only: %i[new create]
   def new
     @booking = Booking.new
