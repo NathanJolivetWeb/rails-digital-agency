@@ -28,8 +28,10 @@
         <h3>Description</h3>
         <p><%= @offer.description %></p>
         <h3>Langages</h3>
-        <p><%= @offer.langage1 %> Level: <%= @offer.level1 %><i class="fas fa-window-minimize"></i></p>
-        <p><%= @offer.langage2 %> Level: <%= @offer.level2 %></p>
+        <% green = '<i class="fas fa-window-minimize awesome-yellow ml-1"></i>' %>
+        <% lightgrey = '<i class="fas fa-window-minimize awesome-lightgrey mr-1"></i>' %>
+        <p><%= @offer.langage1 %> Level: <%= green.html_safe * @offer.level1  %> <%= lightgrey.html_safe * (3 - @offer.level1)  %> </p>
+        <p><%= @offer.langage2 %> Level: <%= green.html_safe * @offer.level2  %> <%= lightgrey.html_safe * (3 - @offer.level2)  %> </p>
       </div>
       <div class="box-review">
         <h3>Reviews</h3>
