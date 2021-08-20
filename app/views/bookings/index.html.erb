@@ -57,14 +57,16 @@
                 <h2><%= booking.offer.price_per_day %>$/day</h2>
                 <h2><i class="fas fa-clock"></i>
                 <%=
-                secondsInDay = 24 * 60 * 60
-                comparatedDate = (Time.now - booking.offer.created_at.localtime).to_i
-                days = comparatedDate / secondsInDay
-                if (comparatedDate < 86400)
-                "#{comparatedDate / ( 60 * 60 )} hours ago"
-                else
-                "#{days} days ago"
-                end
+                  secondsInDay = 24 * 60 * 60
+                  comparatedDate = (Time.now - booking.offer.created_at.localtime).to_i
+                  nbrDays = comparatedDate / secondsInDay
+                  nbrHours = comparatedDate / ( 60 * 60 )
+
+                  if (comparatedDate < 86400)
+                    "#{pluralize nbrHours, "hours", plural: "hour"} ago"
+                  else
+                    "#{pluralize nbrDays, "day", plural: "days" } ago"
+                  end
                 %>
                 </h2>
               </div>
