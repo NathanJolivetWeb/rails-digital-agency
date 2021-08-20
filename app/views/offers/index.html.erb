@@ -19,7 +19,7 @@
                 <h2 class="mr-2"><i class="fas fa-clock"></i>
                   <%=
                     secondsInDay = 24 * 60 * 60
-                    comparatedDate = (Time.now - booking.offer.created_at.localtime).to_i
+                    comparatedDate = (Time.now - offer.created_at.localtime).to_i
                     nbrDays = comparatedDate / secondsInDay
                     nbrHours = comparatedDate / ( 60 * 60 )
 
