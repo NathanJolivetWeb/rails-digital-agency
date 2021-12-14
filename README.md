@@ -1,3 +1,3 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+Rails app on the theme of "Airbnb like" at Le Wagon.
 
 ![website image](https://i.imgur.com/dpt6vfU.png "website image")
